@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misha's Car Cleaning</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .intro h2 {
+            font-size: 2.2rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #e2e8f0;
+        }
+
+        .card.featured {
+            border: 2.5px solid #2563eb;
+            position: relative;
+            transform: scale(1.03);
+        }
+
+        .badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2563eb;
+            color: white;
+            padding: 0.3rem 1.2rem;
+            font-size: 0.85rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .card h3 {
+            font-size: 1.75rem;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+            padding-left: 0.5rem;
+        }
+
+        .card ul li {
+            margin-bottom: 0.75rem;
+            color: #475569;
+            font-size: 1.05rem;
+        }
+
+        .card ul li::before {
+            content: "✓";
+            color: #2563eb;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .info-section {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .info-section h2 {
+            color: #0f172a;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .phone-number {
+            display: inline-block;
+            font-size: 2.2rem;
+            color: #2563eb;
+            font-weight: bold;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.2s;
+        }
+
+        .phone-number:hover {
+            color: #1d4ed8;
+        }
+
+        .dropoff-box {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #166534;
+            font-size: 1.15rem;
+        }
+
+        .dropoff-box strong {
+            color: #14532d;
+        }
+
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 2.5rem;
+            margin-top: 5rem;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Misha's Car Cleaning</h1>
+        <p>Premium Quality Auto Detailing</p>
+    </header>
+
+    <div class="container">
+        <section class="intro">
+            <h2>Our Cleaning Packages</h2>
+            <p>Select a service below and contact us to schedule your drop-off.</p>
+        </section>
+
+        <main class="pricing-table">
+            <div class="card">
+                <div>
+                    <h3>Interior Only</h3>
+                    <div class="price">$20</div>
+                    <ul>
+                        <li>Thorough vacuuming</li>
+                        <li>Dashboard & console wipe down</li>
+                        <li>Inside window cleaning</li>
+                        <li>Trunk vacuum included</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>Exterior Only</h3>
+                    <div class="price">$20</div>
+                    <ul>
+                        <li>Premium hand wash</li>
+                        <li>Wheel & tire cleaning</li>
+                        <li>Exterior glass & mirrors</li>
+                        <li>Hand dry finish</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card featured">
+                <span class="badge">Best Value</span>
+                <div>
+                    <h3>Full Service (Both)</h3>
+                    <div class="price">$40</div>
+                    <ul>
+                        <li>Complete Interior Detail</li>
+                        <li>Complete Exterior Wash</li>
+                        <li>Bumper-to-bumper cleaning</li>
+                        <li>Tire shine application</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <section class="info-section">
+            <h2>Book Your Wash Today</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #475569;">Call or Text to Schedule:</p>
+            <a href="tel:4409038504" class="phone-number">440-903-8504</a>
+            
+            <div class="dropoff-box">
+                <strong>Drop-Off Instructions:</strong> Please drop your vehicle off near the driveway at <strong>7010 Woodduck Court</strong>.
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Misha's Car Cleaning. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
