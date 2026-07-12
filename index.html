@@ -4,42 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Misha's Car Cleaning - Solon, Ohio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
             background-color: #f0f7fa;
             color: #1e293b;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* Glacier Blue Gradient Theme */
+        /* Smooth Reveal Scroll Feature Animation */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Glacier Blue Gradient Header */
         header {
             background: linear-gradient(135deg, #0b2545, #70a1ff);
             color: white;
             text-align: center;
-            padding: 4rem 2rem 3rem 2rem;
+            padding: 5rem 2rem 4rem 2rem;
         }
 
         header h1 {
-            font-size: 3.2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 800;
             margin-bottom: 0.5rem;
-            letter-spacing: 1px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.15);
         }
 
         .slogan {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: #e0f2fe;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
         }
 
         .location {
@@ -47,11 +67,12 @@
             opacity: 0.95;
             background: rgba(255, 255, 255, 0.15);
             display: inline-block;
-            padding: 0.25rem 1rem;
+            padding: 0.35rem 1.25rem;
             border-radius: 20px;
+            font-weight: 500;
         }
 
-        /* Fixed Navigation Tabs System */
+        /* Navigation Tab Row */
         nav {
             background: #ffffff;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
@@ -66,20 +87,21 @@
             margin: 0 auto;
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            padding: 0.5rem 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
         }
 
         .tab-btn {
             background: none;
             border: none;
-            padding: 0.75rem 1.25rem;
-            font-size: 1.05rem;
+            padding: 0.7rem 1.25rem;
+            font-size: 1rem;
             font-weight: 600;
             color: #475569;
             cursor: pointer;
             border-radius: 6px;
-            transition: all 0.2s;
+            transition: all 0.2s ease;
         }
 
         .tab-btn:hover {
@@ -92,7 +114,7 @@
             color: white;
         }
 
-        /* Multi-page Content Panels toggling */
+        /* Page Content Display Toggling */
         .page-panel {
             display: none;
         }
@@ -104,28 +126,28 @@
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 2.5rem 1.5rem;
+            padding: 3rem 1.5rem;
         }
 
         .section-title {
+            font-family: 'Playfair Display', serif;
             text-align: center;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: #0b2545;
-            margin-bottom: 2rem;
-            position: relative;
+            margin-bottom: 2.5rem;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 60px;
+            width: 70px;
             height: 4px;
             background: #70a1ff;
-            margin: 0.5rem auto 0 auto;
+            margin: 0.6rem auto 0 auto;
             border-radius: 2px;
         }
 
-        /* Package Grids styling with Glacier Accents */
+        /* Pricing Layout Cards */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -143,7 +165,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .card:hover {
@@ -168,23 +190,25 @@
             transform: translateX(-50%);
             background: #70a1ff;
             color: white;
-            padding: 0.3rem 1.2rem;
+            padding: 0.3rem 1.5rem;
             font-size: 0.85rem;
             border-radius: 20px;
             text-transform: uppercase;
             font-weight: bold;
+            letter-spacing: 1px;
         }
 
         .card h3 {
-            font-size: 1.75rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
             color: #0b2545;
             margin-bottom: 1rem;
         }
 
         .price {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 800;
-            color: #1e3a8a;
+            color: #0b2545;
             margin-bottom: 1.5rem;
         }
 
@@ -195,40 +219,41 @@
         }
 
         .card ul li {
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.8rem;
             color: #475569;
+            font-size: 1.05rem;
         }
 
         .card ul li::before {
             content: "✓";
             color: #70a1ff;
             font-weight: bold;
-            margin-right: 10px;
+            margin-right: 12px;
         }
 
         .asterisk {
             font-size: 0.85rem;
-            color: #1e3a8a;
+            color: #0b2545;
             margin-top: 1rem;
             font-style: italic;
         }
 
-        /* Clean Two-Column Gallery Layout & Display Column */
+        /* Two-Column Gallery Structure */
         .gallery-layout {
             display: grid;
             grid-template-columns: 1fr;
             gap: 2.5rem;
         }
 
-        @media (min-width: 800px) {
+        @media (min-width: 850px) {
             .gallery-layout {
-                grid-template-columns: 350px 1fr;
+                grid-template-columns: 360px 1fr;
             }
         }
 
         .work-column-box {
             background: white;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             border-radius: 12px;
             border: 1px solid #cbd5e1;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
@@ -236,8 +261,9 @@
         }
 
         .work-column-box h3 {
+            font-family: 'Playfair Display', serif;
             color: #0b2545;
-            font-size: 1.3rem;
+            font-size: 1.6rem;
             margin-bottom: 1rem;
             border-bottom: 2px solid #e2e8f0;
             padding-bottom: 0.5rem;
@@ -245,19 +271,19 @@
 
         .work-column-box p {
             color: #475569;
-            font-size: 0.95rem;
-            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            margin-bottom: 1rem;
         }
 
         .work-column-box ul {
             list-style-type: square;
             padding-left: 1.25rem;
             color: #334155;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .work-column-box li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
         }
 
         .gallery-grid {
@@ -278,7 +304,6 @@
             width: 100%;
             height: 250px;
             background-color: #cbd5e1;
-            position: relative;
         }
 
         .gallery-img-container img {
@@ -289,9 +314,7 @@
         }
 
         .gallery-info {
-            padding: 1rem;
-            background: white;
-            border-top: 1px solid #f1f5f9;
+            padding: 1.25rem;
         }
 
         .gallery-tag {
@@ -303,16 +326,16 @@
             padding: 0.2rem 0.6rem;
             border-radius: 4px;
             text-transform: uppercase;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.4rem;
         }
 
         .gallery-title {
-            font-weight: bold;
+            font-weight: 600;
             color: #0f172a;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
         }
 
-        /* Interface Info Panel Details */
+        /* Info Information Panel */
         .info-panel {
             background: white;
             border-radius: 12px;
@@ -325,12 +348,13 @@
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .info-box h3 {
+            font-family: 'Playfair Display', serif;
             color: #0b2545;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
             border-bottom: 2px solid #e2e8f0;
             padding-bottom: 0.5rem;
@@ -343,11 +367,11 @@
         }
 
         .highlight-text {
-            font-weight: bold;
+            font-weight: 600;
             color: #0f172a;
         }
 
-        /* SMS Action Module Box Layout */
+        /* Booking Callout Panel */
         .booking-instruction-section {
             background: #e0f2fe;
             border-radius: 12px;
@@ -359,5 +383,323 @@
         }
 
         .booking-instruction-section h2 {
+            font-family: 'Playfair Display', serif;
             color: #0b2545;
-            font-size:
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .phone-btn {
+            display: inline-block;
+            background: #70a1ff;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 14px rgba(112, 161, 255, 0.4);
+            transition: background 0.2s;
+        }
+
+        .phone-btn:hover {
+            background: #548eff;
+        }
+
+        .instructions-list {
+            text-align: left;
+            max-width: 450px;
+            margin: 0 auto;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #93c5fd;
+        }
+
+        .instructions-list ol {
+            padding-left: 1.2rem;
+            color: #334155;
+        }
+
+        .instructions-list li {
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        /* FAQ Framework Component */
+        .faq-container {
+            max-width: 750px;
+            margin: 0 auto;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid #cbd5e1;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #0b2545;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-answer {
+            color: #475569;
+            font-size: 1.1rem;
+        }
+
+        /* Reviews Box Links */
+        .review-container {
+            max-width: 750px;
+            margin: 0 auto;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid #cbd5e1;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            background: #16a34a;
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            transition: background 0.2s;
+            text-decoration: none;
+        }
+
+        .submit-btn:hover {
+            background: #15803d;
+        }
+
+        /* ================= GOBBY CHATBOT UI ================= */
+        #gobby-chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            font-family: 'Inter', sans-serif;
+        }
+
+        #gobby-launcher {
+            background: linear-gradient(135deg, #0b2545, #70a1ff);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(11, 37, 69, 0.3);
+            transition: transform 0.2s;
+        }
+
+        #gobby-launcher:hover {
+            transform: scale(1.05);
+        }
+
+        #gobby-window {
+            display: none;
+            width: 330px;
+            height: 430px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            border: 1px solid #cbd5e1;
+            flex-direction: column;
+            overflow: hidden;
+            position: absolute;
+            bottom: 75px;
+            right: 0;
+        }
+
+        .gobby-header {
+            background: #0b2545;
+            color: white;
+            padding: 1rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gobby-header span {
+            font-size: 1.1rem;
+        }
+
+        .gobby-close {
+            cursor: pointer;
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .gobby-close:hover {
+            opacity: 1;
+        }
+
+        .gobby-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            background: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .gobby-msg {
+            max-width: 85%;
+            padding: 0.6rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .gobby-msg.bot {
+            background: #e2e8f0;
+            color: #1e293b;
+            align-self: flex-start;
+        }
+
+        .gobby-msg.user {
+            background: #70a1ff;
+            color: white;
+            align-self: flex-end;
+        }
+
+        .gobby-input-area {
+            display: flex;
+            border-top: 1px solid #e2e8f0;
+            padding: 0.5rem;
+            background: white;
+        }
+
+        .gobby-input-area input {
+            flex: 1;
+            border: 1px solid #cbd5e1;
+            padding: 0.5rem;
+            border-radius: 6px;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .gobby-input-area button {
+            background: #0b2545;
+            color: white;
+            border: none;
+            padding: 0 1rem;
+            margin-left: 0.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        footer {
+            background: #0b2545;
+            color: #94a3b8;
+            text-align: center;
+            padding: 2.5rem;
+            margin-top: 5rem;
+            font-size: 0.95rem;
+        }
+
+        .phone-link {
+            color: #1d4ed8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <p class="slogan">"Don't Drive Dirty — Shine Inside & Out!"</p>
+        <h1>Misha's Car Cleaning</h1>
+        <p class="location">Serving Solon, Ohio Only</p>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <button class="tab-btn active" onclick="switchPage('home')">Home</button>
+            <button class="tab-btn" onclick="switchPage('services')">Services & Pricing</button>
+            <button class="tab-btn" onclick="switchPage('gallery')">Pictures of Our Work</button>
+            <button class="tab-btn" onclick="switchPage('faq')">FAQ</button>
+            <button class="tab-btn" onclick="switchPage('reviews')">Reviews</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+        <div id="home-panel" class="page-panel active">
+            <div class="scroll-reveal">
+                <h2 class="section-title">Premium Local Vehicle Detailing</h2>
+                
+                <div class="info-panel">
+                    <div class="info-grid">
+                        <div class="info-box">
+                            <h3>Contact & Area</h3>
+                            <p><span class="highlight-text">Call or Text:</span> <a href="tel:4409038504" class="phone-link">440-903-8504</a></p>
+                            <p><span class="highlight-text">Location:</span> Solon, Ohio Only (Driveway Drop-Off)</p>
+                        </div>
+                        <div class="info-box">
+                            <h3>Operating Hours</h3>
+                            <p><span class="highlight-text">Friday:</span> 5:00 PM - 8:00 PM</p>
+                            <p><span class="highlight-text">Saturday:</span> 2:00 PM - 6:00 PM</p>
+                            <p><span class="highlight-text">Sunday:</span> 2:00 PM - 6:00 PM</p>
+                        </div>
+                        <div class="info-box">
+                            <h3>Accepted Payments</h3>
+                            <p style="font-weight: 600; color: #16a34a; font-size: 1.2rem; margin-top: 0.5rem;">
+                                📱 Apple Pay or 💵 Cash Only
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-reveal">
+                <section class="booking-instruction-section">
+                    <h2>Ready to Book Your Slot?</h2>
+                    <p style="color: #475569; font-size: 1.15rem;">To secure an active appointment slot, shoot us a direct message right away.</p>
+                    <a href="sms:+14409038504" class="phone-btn">Text: 440-903-8504</a>
+                    <div class="instructions-list">
+                        <p style="font-weight: bold; margin-bottom: 0.5rem; color: #0b2545;">Please include in your text:</p>
+                        <ol>
+                            <li>Your selected cleaning tier</li>
+                            <li>Your preferred date & hour block</li>
+                            <li>Your local address location</li>
+                        </ol>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div id="services-panel" class="page-panel">
+            <h2 class="section-title">Transparent Cleaning Tiers</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div>
+                        <h3>Exterior Only</h3>
+                        <div class="
