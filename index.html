@@ -6,14 +6,13 @@
     <title>Misha's Car Cleaning - Solon, Ohio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth;
         }
 
         body {
@@ -21,36 +20,19 @@
             color: #1e293b;
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        /* Smooth Reveal Scroll Feature Animation */
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-
-        .scroll-reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Glacier Blue Gradient Header */
         header {
             background: linear-gradient(135deg, #0b2545, #70a1ff);
             color: white;
             text-align: center;
-            padding: 5rem 2rem 4rem 2rem;
+            padding: 4rem 2rem;
         }
 
         header h1 {
             font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
-            font-weight: 800;
             margin-bottom: 0.5rem;
-            letter-spacing: 0.5px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.15);
         }
 
         .slogan {
@@ -64,15 +46,12 @@
 
         .location {
             font-size: 1.1rem;
-            opacity: 0.95;
             background: rgba(255, 255, 255, 0.15);
             display: inline-block;
             padding: 0.35rem 1.25rem;
             border-radius: 20px;
-            font-weight: 500;
         }
 
-        /* Navigation Tab Row */
         nav {
             background: #ffffff;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
@@ -87,7 +66,6 @@
             margin: 0 auto;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
             gap: 0.5rem;
             padding: 0.6rem 1rem;
         }
@@ -101,12 +79,6 @@
             color: #475569;
             cursor: pointer;
             border-radius: 6px;
-            transition: all 0.2s ease;
-        }
-
-        .tab-btn:hover {
-            background: #e0f2fe;
-            color: #1d4ed8;
         }
 
         .tab-btn.active {
@@ -114,13 +86,9 @@
             color: white;
         }
 
-        /* Page Content Display Toggling */
+        /* All pages are hidden by default, style handles showing them */
         .page-panel {
             display: none;
-        }
-
-        .page-panel.active {
-            display: block;
         }
 
         .container {
@@ -137,17 +105,6 @@
             margin-bottom: 2.5rem;
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 70px;
-            height: 4px;
-            background: #70a1ff;
-            margin: 0.6rem auto 0 auto;
-            border-radius: 2px;
-        }
-
-        /* Pricing Layout Cards */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -160,27 +117,12 @@
             padding: 3rem 2rem;
             border-radius: 12px;
             text-align: center;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
             border: 1px solid #cbd5e1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
 
         .card.featured {
             border: 3px solid #70a1ff;
             position: relative;
-        }
-
-        .card.membership {
-            border: 3px solid #0b2545;
-            background: linear-gradient(180deg, #ffffff, #e0f2fe);
         }
 
         .badge {
@@ -195,14 +137,6 @@
             border-radius: 20px;
             text-transform: uppercase;
             font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: #0b2545;
-            margin-bottom: 1rem;
         }
 
         .price {
@@ -214,31 +148,19 @@
 
         .card ul {
             list-style: none;
-            margin-bottom: 2rem;
             text-align: left;
         }
 
         .card ul li {
             margin-bottom: 0.8rem;
-            color: #475569;
-            font-size: 1.05rem;
         }
 
         .card ul li::before {
-            content: "✓";
+            content: "✓ ";
             color: #70a1ff;
             font-weight: bold;
-            margin-right: 12px;
         }
 
-        .asterisk {
-            font-size: 0.85rem;
-            color: #0b2545;
-            margin-top: 1rem;
-            font-style: italic;
-        }
-
-        /* Two-Column Gallery Structure */
         .gallery-layout {
             display: grid;
             grid-template-columns: 1fr;
@@ -256,39 +178,15 @@
             padding: 2.5rem 2rem;
             border-radius: 12px;
             border: 1px solid #cbd5e1;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            align-self: start;
-        }
-
-        .work-column-box h3 {
-            font-family: 'Playfair Display', serif;
-            color: #0b2545;
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
-        }
-
-        .work-column-box p {
-            color: #475569;
-            font-size: 1rem;
-            margin-bottom: 1rem;
         }
 
         .work-column-box ul {
-            list-style-type: square;
             padding-left: 1.25rem;
-            color: #334155;
-            font-size: 1rem;
-        }
-
-        .work-column-box li {
-            margin-bottom: 0.6rem;
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 1.5rem;
         }
 
@@ -297,52 +195,28 @@
             border-radius: 8px;
             overflow: hidden;
             border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
         .gallery-img-container {
             width: 100%;
-            height: 250px;
-            background-color: #cbd5e1;
+            height: 220px;
         }
 
         .gallery-img-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
         }
 
         .gallery-info {
-            padding: 1.25rem;
+            padding: 1rem;
         }
 
-        .gallery-tag {
-            display: inline-block;
-            background: #e0f2fe;
-            color: #0369a1;
-            font-size: 0.75rem;
-            font-weight: bold;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            text-transform: uppercase;
-            margin-bottom: 0.4rem;
-        }
-
-        .gallery-title {
-            font-weight: 600;
-            color: #0f172a;
-            font-size: 1.1rem;
-        }
-
-        /* Info Information Panel */
         .info-panel {
             background: white;
             border-radius: 12px;
             padding: 3rem;
             border: 1px solid #cbd5e1;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            margin-bottom: 3rem;
         }
 
         .info-grid {
@@ -351,42 +225,12 @@
             gap: 2.5rem;
         }
 
-        .info-box h3 {
-            font-family: 'Playfair Display', serif;
-            color: #0b2545;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
-        }
-
-        .info-box p {
-            font-size: 1.1rem;
-            color: #475569;
-            margin-bottom: 0.5rem;
-        }
-
-        .highlight-text {
-            font-weight: 600;
-            color: #0f172a;
-        }
-
-        /* Booking Callout Panel */
         .booking-instruction-section {
             background: #e0f2fe;
             border-radius: 12px;
             padding: 3rem;
             border: 2px dashed #70a1ff;
             text-align: center;
-            max-width: 750px;
-            margin: 0 auto 2rem auto;
-        }
-
-        .booking-instruction-section h2 {
-            font-family: 'Playfair Display', serif;
-            color: #0b2545;
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
         }
 
         .phone-btn {
@@ -399,12 +243,6 @@
             font-weight: bold;
             text-decoration: none;
             margin: 1.5rem 0;
-            box-shadow: 0 4px 14px rgba(112, 161, 255, 0.4);
-            transition: background 0.2s;
-        }
-
-        .phone-btn:hover {
-            background: #548eff;
         }
 
         .instructions-list {
@@ -414,20 +252,8 @@
             background: white;
             padding: 1.5rem;
             border-radius: 8px;
-            border: 1px solid #93c5fd;
         }
 
-        .instructions-list ol {
-            padding-left: 1.2rem;
-            color: #334155;
-        }
-
-        .instructions-list li {
-            margin-bottom: 0.5rem;
-            font-size: 1.05rem;
-        }
-
-        /* FAQ Framework Component */
         .faq-container {
             max-width: 750px;
             margin: 0 auto;
@@ -435,75 +261,50 @@
             padding: 2.5rem;
             border-radius: 12px;
             border: 1px solid #cbd5e1;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
         .faq-item {
             margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
             border-bottom: 1px solid #f1f5f9;
-        }
-
-        .faq-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
+            padding-bottom: 1.5rem;
         }
 
         .faq-question {
             font-weight: 700;
-            font-size: 1.25rem;
             color: #0b2545;
-            margin-bottom: 0.5rem;
         }
 
-        .faq-answer {
-            color: #475569;
-            font-size: 1.1rem;
-        }
-
-        /* Reviews Box Links */
         .review-container {
             max-width: 750px;
             margin: 0 auto;
             background: white;
             padding: 2.5rem;
             border-radius: 12px;
+            text-align: center;
             border: 1px solid #cbd5e1;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
         .submit-btn {
-            display: block;
-            width: 100%;
+            display: inline-block;
             background: #16a34a;
             color: white;
-            padding: 1rem;
-            border: none;
+            padding: 1rem 2rem;
             border-radius: 6px;
-            font-size: 1.1rem;
             font-weight: bold;
-            cursor: pointer;
-            text-align: center;
-            transition: background 0.2s;
             text-decoration: none;
+            margin-top: 1rem;
         }
 
-        .submit-btn:hover {
-            background: #15803d;
-        }
-
-        /* ================= GOBBY CHATBOT UI ================= */
+        /* GOBBY CHATBOT */
         #gobby-chat-widget {
             position: fixed;
             bottom: 20px;
             right: 20px;
             z-index: 1000;
-            font-family: 'Inter', sans-serif;
         }
 
         #gobby-launcher {
-            background: linear-gradient(135deg, #0b2545, #70a1ff);
+            background: #0b2545;
             color: white;
             width: 60px;
             height: 60px;
@@ -513,51 +314,29 @@
             justify-content: center;
             font-size: 1.8rem;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(11, 37, 69, 0.3);
-            transition: transform 0.2s;
-        }
-
-        #gobby-launcher:hover {
-            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
         #gobby-window {
             display: none;
-            width: 330px;
-            height: 430px;
+            width: 300px;
+            height: 400px;
             background: white;
             border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
             border: 1px solid #cbd5e1;
-            flex-direction: column;
-            overflow: hidden;
             position: absolute;
             bottom: 75px;
             right: 0;
+            flex-direction: column;
+            overflow: hidden;
         }
 
         .gobby-header {
             background: #0b2545;
             color: white;
-            padding: 1rem;
-            font-weight: 600;
+            padding: 0.8rem;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-        }
-
-        .gobby-header span {
-            font-size: 1.1rem;
-        }
-
-        .gobby-close {
-            cursor: pointer;
-            font-size: 1.2rem;
-            opacity: 0.8;
-        }
-
-        .gobby-close:hover {
-            opacity: 1;
         }
 
         .gobby-messages {
@@ -567,68 +346,48 @@
             background: #f8fafc;
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            gap: 0.5rem;
         }
 
         .gobby-msg {
             max-width: 85%;
-            padding: 0.6rem 0.8rem;
+            padding: 0.5rem 0.75rem;
             border-radius: 8px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
-        .gobby-msg.bot {
-            background: #e2e8f0;
-            color: #1e293b;
-            align-self: flex-start;
-        }
-
-        .gobby-msg.user {
-            background: #70a1ff;
-            color: white;
-            align-self: flex-end;
-        }
+        .gobby-msg.bot { background: #e2e8f0; align-self: flex-start; }
+        .gobby-msg.user { background: #70a1ff; color: white; align-self: flex-end; }
 
         .gobby-input-area {
             display: flex;
-            border-top: 1px solid #e2e8f0;
             padding: 0.5rem;
-            background: white;
+            border-top: 1px solid #e2e8f0;
         }
 
         .gobby-input-area input {
             flex: 1;
+            padding: 0.4rem;
             border: 1px solid #cbd5e1;
-            padding: 0.5rem;
-            border-radius: 6px;
-            outline: none;
-            font-size: 0.9rem;
+            border-radius: 4px;
         }
 
         .gobby-input-area button {
             background: #0b2545;
             color: white;
             border: none;
-            padding: 0 1rem;
-            margin-left: 0.5rem;
-            border-radius: 6px;
+            padding: 0 0.75rem;
+            margin-left: 0.4rem;
+            border-radius: 4px;
             cursor: pointer;
-            font-weight: 600;
         }
 
         footer {
             background: #0b2545;
             color: #94a3b8;
             text-align: center;
-            padding: 2.5rem;
-            margin-top: 5rem;
-            font-size: 0.95rem;
-        }
-
-        .phone-link {
-            color: #1d4ed8;
-            text-decoration: none;
-            font-weight: bold;
+            padding: 2rem;
+            margin-top: 4rem;
         }
     </style>
 </head>
@@ -642,64 +401,224 @@
 
     <nav>
         <div class="nav-container">
-            <button class="tab-btn active" onclick="switchPage('home')">Home</button>
-            <button class="tab-btn" onclick="switchPage('services')">Services & Pricing</button>
-            <button class="tab-btn" onclick="switchPage('gallery')">Pictures of Our Work</button>
-            <button class="tab-btn" onclick="switchPage('faq')">FAQ</button>
-            <button class="tab-btn" onclick="switchPage('reviews')">Reviews</button>
+            <button id="btn-home" class="tab-btn active" onclick="switchPage('home')">Home</button>
+            <button id="btn-services" class="tab-btn" onclick="switchPage('services')">Services</button>
+            <button id="btn-gallery" class="tab-btn" onclick="switchPage('gallery')">Work Pictures</button>
+            <button id="btn-faq" class="tab-btn" onclick="switchPage('faq')">FAQ</button>
+            <button id="btn-reviews" class="tab-btn" onclick="switchPage('reviews')">Reviews</button>
         </div>
     </nav>
 
     <div class="container">
         
-        <div id="home-panel" class="page-panel active">
-            <div class="scroll-reveal">
-                <h2 class="section-title">Premium Local Vehicle Detailing</h2>
-                
-                <div class="info-panel">
-                    <div class="info-grid">
-                        <div class="info-box">
-                            <h3>Contact & Area</h3>
-                            <p><span class="highlight-text">Call or Text:</span> <a href="tel:4409038504" class="phone-link">440-903-8504</a></p>
-                            <p><span class="highlight-text">Location:</span> Solon, Ohio Only (Driveway Drop-Off)</p>
-                        </div>
-                        <div class="info-box">
-                            <h3>Operating Hours</h3>
-                            <p><span class="highlight-text">Friday:</span> 5:00 PM - 8:00 PM</p>
-                            <p><span class="highlight-text">Saturday:</span> 2:00 PM - 6:00 PM</p>
-                            <p><span class="highlight-text">Sunday:</span> 2:00 PM - 6:00 PM</p>
-                        </div>
-                        <div class="info-box">
-                            <h3>Accepted Payments</h3>
-                            <p style="font-weight: 600; color: #16a34a; font-size: 1.2rem; margin-top: 0.5rem;">
-                                📱 Apple Pay or 💵 Cash Only
-                            </p>
-                        </div>
+        <div id="home-panel" class="page-panel" style="display: block;">
+            <h2 class="section-title">Premium Local Detailing</h2>
+            <div class="info-panel">
+                <div class="info-grid">
+                    <div class="info-box">
+                        <h3>Contact info</h3>
+                        <p><b>Call or Text:</b> 440-903-8504</p>
+                        <p><b>Location:</b> Solon, Ohio Only</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>Our Hours</h3>
+                        <p>Friday: 5:00 PM - 8:00 PM</p>
+                        <p>Saturday & Sunday: 2:00 PM - 6:00 PM</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>Payment</h3>
+                        <p style="color: #16a34a; font-weight: bold;">📱 Apple Pay or 💵 Cash Only</p>
                     </div>
                 </div>
             </div>
-
-            <div class="scroll-reveal">
-                <section class="booking-instruction-section">
-                    <h2>Ready to Book Your Slot?</h2>
-                    <p style="color: #475569; font-size: 1.15rem;">To secure an active appointment slot, shoot us a direct message right away.</p>
-                    <a href="sms:+14409038504" class="phone-btn">Text: 440-903-8504</a>
-                    <div class="instructions-list">
-                        <p style="font-weight: bold; margin-bottom: 0.5rem; color: #0b2545;">Please include in your text:</p>
-                        <ol>
-                            <li>Your selected cleaning tier</li>
-                            <li>Your preferred date & hour block</li>
-                            <li>Your local address location</li>
-                        </ol>
-                    </div>
-                </section>
+            <br>
+            <div class="booking-instruction-section">
+                <h2>Ready to Book?</h2>
+                <a href="sms:+14409038504" class="phone-btn">Text: 440-903-8504</a>
+                <div class="instructions-list">
+                    <p style="font-weight: bold; margin-bottom: 0.5rem;">Please text us your:</p>
+                    <ol>
+                        <li>Cleaning Package choice</li>
+                        <li>Preferred day & time window</li>
+                        <li>Your home address</li>
+                    </ol>
+                </div>
             </div>
         </div>
 
         <div id="services-panel" class="page-panel">
-            <h2 class="section-title">Transparent Cleaning Tiers</h2>
+            <h2 class="section-title">Our Pricing</h2>
             <div class="grid-3">
                 <div class="card">
-                    <div>
-                        <h3>Exterior Only</h3>
-                        <div class="
+                    <h3>Exterior Only</h3>
+                    <div class="price">$30</div>
+                    <ul>
+                        <li>Premium foam hand wash</li>
+                        <li>Wheel & tire surface wash</li>
+                        <li>Outer glass dry</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Interior Only</h3>
+                    <div class="price">$30</div>
+                    <ul>
+                        <li>Deep vacuuming floors & seats</li>
+                        <li>Dashboard wipe down</li>
+                        <li>Inner glass wash</li>
+                    </ul>
+                </div>
+                <div class="card featured">
+                    <span class="badge">Best Value</span>
+                    <h3>Full Service</h3>
+                    <div class="price">$50</div>
+                    <ul>
+                        <li>Complete Interior Cleaning</li>
+                        <li>Premium Exterior Hand Wash</li>
+                        <li>Bumper-to-bumper detailing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="gallery-panel" class="page-panel">
+            <h2 class="section-title">Our Work Portfolio</h2>
+            <div class="gallery-layout">
+                <div class="work-column-box">
+                    <h3>Pictures of Our Work</h3>
+                    <p>We treat every vehicle with strict attention to detail, maximizing results for diverse body styles and interior finishes.</p>
+                    <ul>
+                        <li>Streak-free clear panoramic moonroof care.</li>
+                        <li>High-power upholstery and carpet vacuuming.</li>
+                        <li>Stain-avoidance on white leather.</li>
+                        <li>Restorative leather deep hydration.</li>
+                        <li>Complete brake dust rim detailing.</li>
+                    </ul>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><div class="gallery-img-container"><img src="IMG_9300.jpg"></div><div class="gallery-info"><div class="gallery-title">Bronco Exterior Wash</div></div></div>
+                    <div class="gallery-item"><div class="gallery-img-container"><img src="IMG_9301.jpg"></div><div class="gallery-info"><div class="gallery-title">Bronco Cabin Vacuum</div></div></div>
+                    <div class="gallery-item"><div class="gallery-img-container"><img src="Manage your 2018 Audi Q5 (1).jpg"></div><div class="gallery-info"><div class="gallery-title">Audi Q5 Trunk Extraction</div></div></div>
+                    <div class="gallery-item"><div class="gallery-img-container"><img src="Manage your 2018 Audi Q5.jpg"></div><div class="gallery-info"><div class="gallery-title">Audi Q5 White Leather Care</div></div></div>
+                    <div class="gallery-item"><div class="gallery-img-container"><img src="Manage your 2018 Audi Q7.jpg"></div><div class="gallery-info"><div class="gallery-title">Audi Q7 Window Wipe</div></div></div>
+                    <div class="gallery-item"><div class="gallery-img-container"><img src="View recent photos (1).jpg"></div><div class="gallery-info"><div class="gallery-title">Odyssey Dash Dusting</div></div></div>
+                    <div class="gallery-item"><div class="gallery-img-container"><img src="View recent photos (2).jpg"></div><div class="gallery-info"><div class="gallery-title">Audi Leather Hydration</div></div></div>
+                    <div class="gallery-item"><div class="gallery-img-container"><img src="View recent photos (3).jpg"></div><div class="gallery-info"><div class="gallery-title">Audi Grille Detail</div></div></div>
+                    <div class="gallery-item"><div class="gallery-img-container"><img src="View recent photos (4).jpg"></div><div class="gallery-info"><div class="gallery-title">Odyssey Protective Rinse</div></div></div>
+                    <div class="gallery-item"><div class="gallery-img-container"><img src="View recent photos.jpg"></div><div class="gallery-info"><div class="gallery-title">Audi Mirror Reflective Polish</div></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="faq-panel" class="page-panel">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Do I need to leave my keys?</div>
+                    <div class="faq-answer">Yes.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How long does a full service take?</div>
+                    <div class="faq-answer">2-3 hours depending on the state of the car.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What happens if it rains on your appointment?</div>
+                    <div class="faq-answer">If the rain is really bad, we reschedule it with all your money back! If it is just light rain, no problem—we will get the job done!</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="reviews-panel" class="page-panel">
+            <h2 class="section-title">Client Reviews</h2>
+            <div class="review-container">
+                <p>Loved our service? Tap below to leave us a 5-star review directly on Google!</p>
+                <a href="YOUR_GOOGLE_REVIEW_LINK" target="_blank" class="submit-btn">⭐⭐⭐⭐⭐ Review Us on Google</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="gobby-chat-widget">
+        <div id="gobby-launcher" onclick="toggleGobby()">💬</div>
+        <div id="gobby-window">
+            <div class="gobby-header">
+                <span>Gobby AI Assistant 🤖</span>
+                <span style="cursor:pointer;" onclick="toggleGobby()">✕</span>
+            </div>
+            <div class="gobby-messages" id="gobby-msg-box">
+                <div class="gobby-msg bot">Hi! I'm Gobby. Ask me about Misha's prices, hours, or booking info!</div>
+            </div>
+            <div class="gobby-input-area">
+                <input type="text" id="gobby-input-field" placeholder="Ask Gobby..." onkeypress="if(event.key==='Enter')sendGobbyMessage()">
+                <button onclick="sendGobbyMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Misha's Car Cleaning. Solon, Ohio.</p>
+    </footer>
+
+    <script>
+        function switchPage(pageId) {
+            // Hide every single tab layout page panel
+            var panels = document.querySelectorAll('.page-panel');
+            for (var i = 0; i < panels.length; i++) {
+                panels[i].style.display = 'none';
+            }
+
+            // Un-highlight old buttons
+            var buttons = document.querySelectorAll('.tab-btn');
+            for (var j = 0; j < buttons.length; j++) {
+                buttons[j].classList.remove('active');
+            }
+
+            // Open the specific clicked page view
+            document.getElementById(pageId + '-panel').style.display = 'block';
+            
+            // Highlight active navigation tab
+            document.getElementById('btn-' + pageId).classList.add('active');
+            
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        function toggleGobby() {
+            var win = document.getElementById('gobby-window');
+            win.style.display = (win.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        function sendGobbyMessage() {
+            var input = document.getElementById('gobby-input-field');
+            var txt = input.value.trim();
+            if(!txt) return;
+
+            var box = document.getElementById('gobby-msg-box');
+            var uDiv = document.createElement('div');
+            uDiv.className = 'gobby-msg user';
+            uDiv.textContent = txt;
+            box.appendChild(uDiv);
+            input.value = '';
+            box.scrollTop = box.scrollHeight;
+
+            setTimeout(function() {
+                var bDiv = document.createElement('div');
+                bDiv.className = 'gobby-msg bot';
+                var q = txt.toLowerCase();
+                var reply = "Please text Misha at 440-903-8504 for custom support questions!";
+
+                if(q.includes('price') || q.includes('cost') || q.includes('how much')) {
+                    reply = "Prices: $30 Exterior, $30 Interior, or $50 for Full Service (Both packages Together).";
+                } else if(q.includes('hour') || q.includes('time') || q.includes('open')) {
+                    reply = "Hours: Friday 5-8pm, Saturday & Sunday 2-6pm.";
+                } else if(q.includes('book') || q.includes('schedule') || q.includes('appoint')) {
+                    reply = "To book, send a text message to 440-903-8504 with your selected package, preferred time, and home address.";
+                } else if(q.includes('long') || q.includes('time to clean') || q.includes('takes')) {
+                    reply = "Single packages take about 30 mins. A full service take 2-3 hours depending on the state of the car.";
+                }
+                bDiv.textContent = reply;
+                box.appendChild(bDiv);
+                box.scrollTop = box.scrollHeight;
+            }, 500);
+        }
+    </script>
+</body>
+</html>
