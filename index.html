@@ -13,27 +13,29 @@
         }
 
         body {
-            background-color: #f8fafc;
+            background-color: #f0f7fa;
             color: #1e293b;
             line-height: 1.6;
         }
 
+        /* Glacier Blue Gradient Theme */
         header {
-            background: linear-gradient(135deg, #0f172a, #1d4ed8);
+            background: linear-gradient(135deg, #0b2545, #70a1ff);
             color: white;
             text-align: center;
-            padding: 5rem 2rem;
+            padding: 4rem 2rem 3rem 2rem;
         }
 
         header h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             margin-bottom: 0.5rem;
             letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         .slogan {
-            font-size: 1.4rem;
-            color: #38bdf8;
+            font-size: 1.3rem;
+            color: #e0f2fe;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1.5px;
@@ -42,28 +44,93 @@
 
         .location {
             font-size: 1.1rem;
-            opacity: 0.9;
+            opacity: 0.95;
+            background: rgba(255, 255, 255, 0.15);
+            display: inline-block;
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
+        }
+
+        /* Fixed Navigation Tabs System */
+        nav {
+            background: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #cbd5e1;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 0.75rem 1.25rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #475569;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            background: #e0f2fe;
+            color: #1d4ed8;
+        }
+
+        .tab-btn.active {
+            background: #70a1ff;
+            color: white;
+        }
+
+        /* Multi-page Content Panels toggling */
+        .page-panel {
+            display: none;
+        }
+
+        .page-panel.active {
+            display: block;
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 4rem 1.5rem;
+            padding: 2.5rem 1.5rem;
         }
 
         .section-title {
             text-align: center;
             font-size: 2.2rem;
-            color: #1e3a8a;
-            margin-bottom: 2.5rem;
-            margin-top: 2rem;
+            color: #0b2545;
+            margin-bottom: 2rem;
+            position: relative;
         }
 
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #70a1ff;
+            margin: 0.5rem auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Package Grids styling with Glacier Accents */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2.5rem;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .card {
@@ -72,7 +139,7 @@
             border-radius: 12px;
             text-align: center;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e2e8f0;
+            border: 1px solid #cbd5e1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -85,13 +152,13 @@
         }
 
         .card.featured {
-            border: 2.5px solid #2563eb;
+            border: 3px solid #70a1ff;
             position: relative;
         }
 
         .card.membership {
-            border: 2.5px solid #d97706;
-            background: linear-gradient(180deg, #ffffff, #fef3c7);
+            border: 3px solid #0b2545;
+            background: linear-gradient(180deg, #ffffff, #e0f2fe);
         }
 
         .badge {
@@ -99,7 +166,7 @@
             top: -14px;
             left: 50%;
             transform: translateX(-50%);
-            background: #2563eb;
+            background: #70a1ff;
             color: white;
             padding: 0.3rem 1.2rem;
             font-size: 0.85rem;
@@ -108,13 +175,9 @@
             font-weight: bold;
         }
 
-        .badge.gold {
-            background: #d97706;
-        }
-
         .card h3 {
             font-size: 1.75rem;
-            color: #0f172a;
+            color: #0b2545;
             margin-bottom: 1rem;
         }
 
@@ -138,35 +201,135 @@
 
         .card ul li::before {
             content: "✓";
-            color: #2563eb;
+            color: #70a1ff;
             font-weight: bold;
             margin-right: 10px;
         }
 
         .asterisk {
             font-size: 0.85rem;
-            color: #b45309;
+            color: #1e3a8a;
             margin-top: 1rem;
             font-style: italic;
         }
 
+        /* Clean Two-Column Gallery Layout & Display Column */
+        .gallery-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        @media (min-width: 800px) {
+            .gallery-layout {
+                grid-template-columns: 350px 1fr;
+            }
+        }
+
+        .work-column-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #cbd5e1;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            align-self: start;
+        }
+
+        .work-column-box h3 {
+            color: #0b2545;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        .work-column-box p {
+            color: #475569;
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .work-column-box ul {
+            list-style-type: square;
+            padding-left: 1.25rem;
+            color: #334155;
+            font-size: 0.95rem;
+        }
+
+        .work-column-box li {
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .gallery-img-container {
+            width: 100%;
+            height: 250px;
+            background-color: #cbd5e1;
+            position: relative;
+        }
+
+        .gallery-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-info {
+            padding: 1rem;
+            background: white;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .gallery-tag {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0369a1;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+
+        .gallery-title {
+            font-weight: bold;
+            color: #0f172a;
+            font-size: 1.05rem;
+        }
+
+        /* Interface Info Panel Details */
         .info-panel {
             background: white;
             border-radius: 12px;
             padding: 3rem;
-            border: 1px solid #e2e8f0;
+            border: 1px solid #cbd5e1;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
         .info-box h3 {
-            color: #1e3a8a;
+            color: #0b2545;
             font-size: 1.4rem;
             margin-bottom: 1rem;
             border-bottom: 2px solid #e2e8f0;
@@ -184,310 +347,17 @@
             color: #0f172a;
         }
 
-        /* Booking Instructions Box */
+        /* SMS Action Module Box Layout */
         .booking-instruction-section {
-            background: #eff6ff;
+            background: #e0f2fe;
             border-radius: 12px;
             padding: 3rem;
-            border: 2px dashed #2563eb;
+            border: 2px dashed #70a1ff;
             text-align: center;
             max-width: 750px;
-            margin: 0 auto 4rem auto;
+            margin: 0 auto 2rem auto;
         }
 
         .booking-instruction-section h2 {
-            color: #1e3a8a;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .phone-btn {
-            display: inline-block;
-            background: #2563eb;
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 30px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-            margin: 1.5rem 0;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
-            transition: background 0.2s;
-        }
-
-        .phone-btn:hover {
-            background: #1d4ed8;
-        }
-
-        .instructions-list {
-            text-align: left;
-            max-width: 450px;
-            margin: 0 auto;
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid #bfdbfe;
-        }
-
-        .instructions-list ol {
-            padding-left: 1.2rem;
-            color: #334155;
-        }
-
-        .instructions-list li {
-            margin-bottom: 0.5rem;
-            font-size: 1.05rem;
-        }
-
-        /* FAQ Section */
-        .faq-container {
-            max-width: 750px;
-            margin: 0 auto 4rem auto;
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
-        .faq-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #f1f5f9;
-        }
-
-        .faq-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-
-        .faq-question {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: #1e3a8a;
-            margin-bottom: 0.5rem;
-        }
-
-        .faq-answer {
-            color: #475569;
-            font-size: 1.05rem;
-        }
-
-        /* Review Section */
-        .review-container {
-            max-width: 750px;
-            margin: 0 auto;
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
-        .form-group {
-            margin-bottom: 1.25rem;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #334155;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            font-size: 1rem;
-            background-color: #f8fafc;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            height: 120px;
-        }
-
-        .submit-btn {
-            display: block;
-            width: 100%;
-            background: #16a34a;
-            color: white;
-            padding: 1rem;
-            border: none;
-            border-radius: 6px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .submit-btn:hover {
-            background: #15803d;
-        }
-
-        footer {
-            background: #0f172a;
-            color: #94a3b8;
-            text-align: center;
-            padding: 2.5rem;
-            margin-top: 5rem;
-            font-size: 0.95rem;
-        }
-
-        .phone-link {
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <p class="slogan">"Don't Drive Dirty — Shine Inside & Out!"</p>
-        <h1>Misha's Car Cleaning</h1>
-        <p class="location">Serving Solon, Ohio Only</p>
-    </header>
-
-    <div class="container">
-        
-        <h2 class="section-title">Our Detailing Packages</h2>
-        <div class="grid-3">
-            <div class="card">
-                <div>
-                    <h3>Exterior Only</h3>
-                    <div class="price">$15</div>
-                    <ul>
-                        <li>Premium foam hand wash</li>
-                        <li>Wheel & tire surface wash</li>
-                        <li>Outer glass towel dry</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <h3>Interior Only</h3>
-                    <div class="price">$15</div>
-                    <ul>
-                        <li>Deep vacuuming floors & seats</li>
-                        <li>Dashboard & console wipe down</li>
-                        <li>Streak-free inner glass wash</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card featured">
-                <span class="badge">Best Value</span>
-                <div>
-                    <h3>Full Service (Both)</h3>
-                    <div class="price">$30</div>
-                    <ul>
-                        <li>Complete Interior Cleaning</li>
-                        <li>Premium Exterior Hand Wash</li>
-                        <li>Bumper-to-bumper detailing</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <h2 class="section-title">Special Monthly Offer</h2>
-        <div style="max-width: 400px; margin: 0 auto 4rem auto;">
-            <div class="card membership">
-                <span class="badge gold">VIP Membership</span>
-                <div>
-                    <h3>Unlimited Passes</h3>
-                    <div class="price">$60<span>/mo</span></div>
-                    <p style="color: #475569; margin-bottom: 1.5rem;">Keep your car perfect all month long with unlimited washes!</p>
-                </div>
-                <p class="asterisk">* Must contact us prior and pay, then arrange your exact requested wash times via text.</p>
-            </div>
-        </div>
-
-        <div class="info-panel">
-            <div class="info-grid">
-                <div class="info-box">
-                    <h3>Contact & Area</h3>
-                    <p><span class="highlight-text">Call or Text:</span> <a href="tel:4409038504" class="phone-link">440-903-8504</a></p>
-                    <p><span class="highlight-text">Location:</span> Solon, Ohio Only</p>
-                </div>
-                <div class="info-box">
-                    <h3>Operating Hours</h3>
-                    <p><span class="highlight-text">Friday:</span> 5:00 PM - 8:00 PM</p>
-                    <p><span class="highlight-text">Saturday:</span> 2:00 PM - 6:00 PM</p>
-                    <p><span class="highlight-text">Sunday:</span> 2:00 PM - 6:00 PM</p>
-                </div>
-                <div class="info-box">
-                    <h3>Accepted Payments</h3>
-                    <p style="font-weight: 600; color: #16a34a; font-size: 1.2rem; margin-top: 0.5rem;">
-                        📱 Apple Pay or 💵 Cash Only
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <section class="booking-instruction-section">
-            <h2>Ready to Book?</h2>
-            <p style="color: #475569; font-size: 1.15rem;">To request an appointment, tap the button below to send us a text message.</p>
-            
-            <a href="sms:+14409038504" class="phone-btn">Text: 440-903-8504</a>
-            
-            <div class="instructions-list">
-                <p style="font-weight: bold; margin-bottom: 0.5rem; color: #1e3a8a;">Please include the following in your text:</p>
-                <ol>
-                    <li>Which **package** you want ($15 Exterior, $15 Interior, $30 Both, or $60 Unlimited)</li>
-                    <li>Your preferred **time or times** (matching our open hours)</li>
-                    <li>Your **home address**</li>
-                </ol>
-            </div>
-        </section>
-
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <div class="faq-container">
-            <div class="faq-item">
-                <div class="faq-question">Do I need to leave my keys?</div>
-                <div class="faq-answer">Yes.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">How long does a full service take?</div>
-                <div class="faq-answer">30 minutes to an hour.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">What happens if it rains on your appointment?</div>
-                <div class="faq-answer">If the rain is really bad, we reschedule it with all your money back! If it is just light rain, no problem—we will get the job done!</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">When do you need to pay?</div>
-                <div class="faq-answer">Upon arrival of our services. If you don't like the final result, your money back is guaranteed!</div>
-            </div>
-        </div>
-
-        <h2 class="section-title">Leave Us a Review</h2>
-        <div class="review-container">
-            <p style="color: #64748b; margin-bottom: 1.5rem; text-align: center;">Your feedback helps us grow. Let us know what we did well or how we can improve!</p>
-            
-            <form onsubmit="alert('Thank you for your valuable feedback!'); this.reset(); return false;">
-                <div class="form-group">
-                    <label for="review-name">Your Name:</label>
-                    <input type="text" id="review-name" required placeholder="Enter your name">
-                </div>
-                <div class="form-group">
-                    <label for="feedback">What did we do well or what can we do better?</label>
-                    <textarea id="feedback" required placeholder="Share your experience with Misha's Car Cleaning..."></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Submit Review</button>
-            </form>
-        </div>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Misha's Car Cleaning. Solon, Ohio. All rights reserved.</p>
-    </footer>
-
-    </body>
-</html>
+            color: #0b2545;
+            font-size:
