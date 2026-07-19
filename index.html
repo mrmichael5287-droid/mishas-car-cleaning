@@ -160,6 +160,15 @@
             font-weight: bold;
         }
 
+        .price-note {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #ef4444;
+            font-weight: bold;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 0.75rem;
+        }
+
         .gallery-layout {
             display: grid;
             grid-template-columns: 1fr;
@@ -252,11 +261,22 @@
 
         .instructions-list {
             text-align: left;
-            max-width: 450px;
+            max-width: 480px;
             margin: 0 auto;
             background: white;
             padding: 1.5rem;
             border-radius: 8px;
+        }
+
+        .dropoff-note {
+            background: #fff9db;
+            border-left: 4px solid #fab005;
+            padding: 0.75rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #664d03;
+            font-weight: 500;
+            border-radius: 0 4px 4px 0;
         }
 
         .faq-container {
@@ -300,7 +320,7 @@
             margin-top: 1rem;
         }
 
-        /* ================= REDESIGNED GOBBY CHARACTER CONTAINER ================= */
+        /* GOBBY CHARACTER DESIGN */
         #gobby-chat-widget {
             position: fixed;
             bottom: 20px;
@@ -308,7 +328,6 @@
             z-index: 1000;
         }
 
-        /* Gobby Designed Character Frame Setup */
         #gobby-launcher {
             width: 75px;
             height: 75px;
@@ -329,7 +348,6 @@
             transform: translateY(-5px) scale(1.05);
         }
 
-        /* Gobby Character Eyes Graphic Details */
         .gobby-eyes-container {
             display: flex;
             gap: 8px;
@@ -492,6 +510,9 @@
                         <li>Preferred day & time window</li>
                         <li>Your home address</li>
                     </ol>
+                    <div class="dropoff-note">
+                        ⚠️ <b>Note:</b> If you choose drop-off cleaning, please bring two cars so you can get home safely in one, then return to pick yours up as soon as Misha sends a text to come!
+                    </div>
                 </div>
             </div>
         </div>
@@ -507,6 +528,7 @@
                         <li>Wheel & tire surface wash</li>
                         <li>Outer glass dry</li>
                     </ul>
+                    <div class="price-note">⚠️ Extremely Dirty Cars: $50</div>
                 </div>
                 <div class="card">
                     <h3>Interior Only</h3>
@@ -516,6 +538,7 @@
                         <li>Dashboard wipe down</li>
                         <li>Inner glass wash</li>
                     </ul>
+                    <div class="price-note">⚠️ Extremely Dirty Cars: $50</div>
                 </div>
                 <div class="card featured">
                     <span class="badge">Best Value</span>
@@ -526,6 +549,7 @@
                         <li>Premium Exterior Hand Wash</li>
                         <li>Bumper-to-bumper detailing</li>
                     </ul>
+                    <div class="price-note">⚠️ Extremely Dirty Cars: $90</div>
                 </div>
             </div>
         </div>
@@ -544,18 +568,18 @@
                         <li>Complete brake dust rim detailing.</li>
                     </ul>
                 </div>
-               <div class="gallery-grid">
-    <div class="gallery-item"><div class="gallery-img-container"><img src="IMG_9300.jpg" alt="Gallery Photo"></div><div class="gallery-info"><div class="gallery-title">Bronco Exterior Wash</div></div></div>
-    <div class="gallery-item"><div class="gallery-img-container"><img src="IMG_9301.jpg" alt="Gallery Photo"></div><div class="gallery-info"><div class="gallery-title">Bronco Cabin Vacuum</div></div></div>
-    <div class="gallery-item"><div class="gallery-img-container"><img src="Manage%20your%202018%20Audi%20Q5%20(1).jpg" alt="Gallery Photo"></div><div class="gallery-info"><div class="gallery-title">Audi Q5 Trunk Extraction</div></div></div>
-    <div class="gallery-item"><div class="gallery-img-container"><img src="Manage%20your%202018%20Audi%20Q5.jpg" alt="Gallery Photo"></div><div class="gallery-info"><div class="gallery-title">Audi Q5 White Leather Care</div></div></div>
-    <div class="gallery-item"><div class="gallery-img-container"><img src="Manage%20your%202018%20Audi%20Q7.jpg" alt="Gallery Photo"></div><div class="gallery-info"><div class="gallery-title">Audi Q7 Window Wipe</div></div></div>
-    <div class="gallery-item"><div class="gallery-img-container"><img src="View%20recent%20photos%20(1).jpg" alt="Gallery Photo"></div><div class="gallery-info"><div class="gallery-title">Odyssey Dash Dusting</div></div></div>
-    <div class="gallery-item"><div class="gallery-img-container"><img src="View%20recent%20photos%20(2).jpg" alt="Gallery Photo"></div><div class="gallery-info"><div class="gallery-title">Audi Leather Hydration</div></div></div>
-    <div class="gallery-item"><div class="gallery-img-container"><img src="View%20recent%20photos%20(3).jpg" alt="Gallery Photo"></div><div class="gallery-info"><div class="gallery-title">Audi Grille Detail</div></div></div>
-    <div class="gallery-item"><div class="gallery-img-container"><img src="View%20recent%20photos%20(4).jpg" alt="Gallery Photo"></div><div class="gallery-info"><div class="gallery-title">Odyssey Protective Rinse</div></div></div>
-    <div class="gallery-item"><div class="gallery-img-container"><img src="View%20recent%20photos.jpg" alt="Gallery Photo"></div><div class="gallery-info"><div class="gallery-title">Audi Mirror Polish</div></div></div>
-</div>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><div class="gallery-img-container"><img src="IMG_9300.jpg" alt="Gallery Photo"></div><div class="gallery-info"><div class="gallery-title">Bronco Exterior Wash</div></div></div>
+                    <div class="gallery-item"><div class="gallery-img-container"><img src="IMG_9301.jpg" alt="Gallery Photo"></div><div class="gallery-info"><div class="gallery-title">Bronco Cabin Vacuum</div></div></div>
+                    <div class="gallery-item"><div class="gallery-img-container"><img src="Manage your 2018 Audi Q5 (1).jpg" alt="Gallery Photo"></div><div class="gallery-info"><div class="gallery-title">Audi Q5 Trunk Extraction</div></div></div>
+                    <div class="gallery-item"><div class="gallery-img-container"><img src="Manage your 2018 Audi Q5.jpg" alt="Gallery Photo"></div><div class="gallery-info"><div class="gallery-title">Audi Q5 White Leather Care</div></div></div>
+                    <div class="gallery-item"><div class="gallery-img-container"><img src="Manage your 2018 Audi Q7.jpg" alt="Gallery Photo"></div><div class="gallery-info"><div class="gallery-title">Audi Q7 Window Wipe</div></div></div>
+                    <div class="gallery-item"><div class="gallery-img-container"><img src="View recent photos (1).jpg" alt="Gallery Photo"></div><div class="gallery-info"><div class="gallery-title">Odyssey Dash Dusting</div></div></div>
+                    <div class="gallery-item"><div class="gallery-img-container"><img src="View recent photos (2).jpg" alt="Gallery Photo"></div><div class="gallery-info"><div class="gallery-title">Audi Leather Hydration</div></div></div>
+                    <div class="gallery-item"><div class="gallery-img-container"><img src="View recent photos (3).jpg" alt="Gallery Photo"></div><div class="gallery-info"><div class="gallery-title">Audi Grille Detail</div></div></div>
+                    <div class="gallery-item"><div class="gallery-img-container"><img src="View recent photos (4).jpg" alt="Gallery Photo"></div><div class="gallery-info"><div class="gallery-title">Odyssey Protective Rinse</div></div></div>
+                    <div class="gallery-item"><div class="gallery-img-container"><img src="View recent photos.jpg" alt="Gallery Photo"></div><div class="gallery-info"><div class="gallery-title">Audi Mirror Polish</div></div></div>
+                </div>
             </div>
         </div>
 
@@ -657,11 +681,11 @@
                 var reply = "Please text Misha at 440-903-8504 for custom support questions!";
 
                 if(q.includes('price') || q.includes('cost') || q.includes('how much')) {
-                    reply = "Prices: $30 Exterior, $30 Interior, or $50 for Full Service (Both packages Together).";
+                    reply = "Prices: $30 Exterior/Interior ($50 if extremely dirty), or $50 for Full Service ($90 if extremely dirty).";
                 } else if(q.includes('hour') || q.includes('time') || q.includes('open')) {
                     reply = "Hours: Friday 5-8pm, Saturday & Sunday 2-6pm.";
-                } else if(q.includes('book') || q.includes('schedule') || q.includes('appoint')) {
-                    reply = "To book, send a text message to 440-903-8504 with your selected package, preferred time, and home address.";
+                } else if(q.includes('book') || q.includes('schedule') || q.includes('appoint') || q.includes('drop')) {
+                    reply = "To book, text 440-903-8504. Remember: if dropping off, bring 2 cars so you can get home, then pick up when Misha texts you!";
                 } else if(q.includes('long') || q.includes('time to clean') || q.includes('takes')) {
                     reply = "Single packages take about 30 mins. A full service take 2-3 hours depending on the state of the car.";
                 }
